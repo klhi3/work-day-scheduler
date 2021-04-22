@@ -8,14 +8,18 @@
 This is a daily planner to manage my time effectively
 
 1. Create a schedule
-2. CUrrent day is on the top of the calendar
-3. timeblocks for standard business hours for selected day
-4. Each time block indicate in color past, present or future
+2. Current day is on the top of the calendar
+3. Timeblocks for standard business hours for selected day
+4. Each time block indicates past, present or future in color 
 5. Can save an event into a timeblock and local storage
 6. Saved events persist
   
 
  ## Run
+[Work Day Scheduler](https://klhi3.github.io/work-day-scheduler/)
+
+
+ ## Portfolio
 ![Work Day Scheduler](./Assets/page.gif)
 
 
