@@ -16,7 +16,7 @@ This is a daily planner to manage my time effectively
   
 
  ## Run
-![Work Day Scheduler](./Assets/05-third-party-apis-homework-demo.gif)
+![Work Day Scheduler](./Assets/page.gif)
 
 
 ## links
