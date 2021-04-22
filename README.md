@@ -13,19 +13,19 @@ This is a daily planner to manage my time effectively
 4. Each time block indicates past, present or future in color 
 5. Can save an event into a timeblock and local storage
 6. Saved events persist
+    
   
-
  ## Run
-[Work Day Scheduler](https://klhi3.github.io/work-day-scheduler/)
-
-
+To view this project, click [Work Day Scheduler](https://klhi3.github.io/work-day-scheduler/)
+  
+  
  ## Portfolio
 ![Work Day Scheduler](./Assets/page.gif)
-
-
+  
+  
 ## links
 Time : https://momentjs.com/
-
- 
+  
+   
 
 :copyright:klhi3
