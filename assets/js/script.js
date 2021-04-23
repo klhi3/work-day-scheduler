@@ -57,14 +57,14 @@ function renderEvents() {
         var btn1 = document.createElement("button");
         btn1.setAttribute('class', 'saveBtn col-1');
         var iE = document.createElement("i");
-        iE.setAttribute('style', 'font-size:24px');
-        iE.setAttribute('class', 'fa');
+        // iE.setAttribute('style', 'font-size:24px');
+        // iE.setAttribute('class', 'fa');
+        // iE.textContent = "&#xf0c7;";
+        iE.setAttribute('class', 'fa fa-floppy-o');  
         btn1.appendChild(iE);
-        btn1.innerHTML="&#xf0c7;";
-        div.appendChild(btn1);
         console.log(btn1);
+        div.appendChild(btn1);
 
-    div.appendChild(btn1);
     eventList .appendChild(div);
   }
 }
