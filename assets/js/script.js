@@ -20,7 +20,7 @@ var schedules = [
 ];
 
 //variables
-var eventListEl = $('.container');
+// var eventListEl = $('.container');
 var eventList = document.querySelector(".container");
 
 var events = schedules;
@@ -38,7 +38,6 @@ function renderEvents() {
 
     var div = document.createElement("div");
     div.setAttribute('class', 'time-block row');
-    div.textContent=event.time;
     div.setAttribute("data-index", i);
     console.log(div);
 
@@ -57,9 +56,6 @@ function renderEvents() {
         var btn1 = document.createElement("button");
         btn1.setAttribute('class', 'saveBtn col-1');
         var iE = document.createElement("i");
-        // iE.setAttribute('style', 'font-size:24px');
-        // iE.setAttribute('class', 'fa');
-        // iE.textContent = "&#xf0c7;";
         iE.setAttribute('class', 'fa fa-floppy-o');  
         btn1.appendChild(iE);
         console.log(btn1);
