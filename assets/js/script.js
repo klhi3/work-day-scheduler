@@ -53,6 +53,7 @@ function renderEvents() {
         else  textArea1.setAttribute('class', 'present col-md');
 
         textArea1.textContent=event.detail;
+        textArea1.setAttribute("style", "color: black;");
         div.appendChild(textArea1);
 
         var btn1 = document.createElement("button");
@@ -71,7 +72,6 @@ function renderEvents() {
 function init() {
   // Get stored events from localStorage
   var storedSchedules = JSON.parse(localStorage.getItem("events"));
-  console.log("init(): storedSchedule:"+storedSchedules);
 
   // If events were retrieved from localStorage, update the todos array to it
   if (storedSchedules !== null) {
@@ -84,10 +84,7 @@ function init() {
 
 function storeEvents() {
   // Stringify and set key in localStorage to todos array
-  console.log("store Event*******>");
-  console.log(events);
   localStorage.setItem("events", JSON.stringify(events));
-  console.log("store Event*******<");
 }
 
 // Add click event to schedule element
@@ -99,16 +96,11 @@ eventList.addEventListener("click", function(event) {
     // Get its data-index value and remove the todo element from the list
     var index = element.parentElement.getAttribute("data-index");
     var content = element.previousSibling.value;
-    console.log(element.previousSibling.value);
 
-    console.log("index:"+index);
-    console.log("content:"+content+":");
     events[index].detail=content;
 
     // Store updated todos in localStorage, re-render the list
-    console.log("store Event +++++>");
     storeEvents();
-    console.log("render Event +++++>");
     renderEvents();
   }
 });
