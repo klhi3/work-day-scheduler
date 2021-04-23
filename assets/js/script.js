@@ -4,7 +4,6 @@ $("#currentDay").text(currentDay.format("dddd, MMMM Do YYYY"));
 
 // get current time value
 var timeValue=currentDay;  //hA
-console.log("["+timeValue+"]");
 
 //business hours
 var schedules = [
@@ -30,8 +29,6 @@ function renderEvents() {
   // Clear eventList element 
   eventList.innerHTML = "";
 
-  console.log("renderEvents: events size " + events.length);
-
   // Render a new event
   for (var i = 0; i < events.length; i++) {
     var event = events[i];
@@ -39,13 +36,11 @@ function renderEvents() {
     var div = document.createElement("div");
     div.setAttribute('class', 'time-block row');
     div.setAttribute("data-index", i);
-    console.log(div);
 
         var div1 = document.createElement("div");
         div1.setAttribute('class', 'hour col-1');
         div1.textContent=event.time; 
         div.appendChild(div1);
-        console.log(div1);
 
         var textArea1 = document.createElement("textarea");
 
@@ -59,16 +54,15 @@ function renderEvents() {
 
         textArea1.textContent=event.detail;
         div.appendChild(textArea1);
-        console.log(textArea1);
 
         var btn1 = document.createElement("button");
         btn1.setAttribute('class', 'saveBtn col-1');
         var iE = document.createElement("i");
         iE.setAttribute('class', 'fa fa-floppy-o');  
         btn1.appendChild(iE);
-        console.log(btn1);
-        div.appendChild(btn1);
 
+        div.appendChild(btn1);
+ 
     eventList .appendChild(div);
   }
 }
@@ -77,44 +71,26 @@ function renderEvents() {
 function init() {
   // Get stored events from localStorage
   var storedSchedules = JSON.parse(localStorage.getItem("events"));
-  console.log("init(): storedSchedule"+storedSchedules);
+  console.log("init(): storedSchedule:"+storedSchedules);
 
   // If events were retrieved from localStorage, update the todos array to it
   if (storedSchedules !== null) {
     events = storedSchedules;
   }
 
-   console.log("init() events: "+events );
   // This is a helper function that will render todos to the DOM
   renderEvents();
 }
 
 function storeEvents() {
   // Stringify and set key in localStorage to todos array
+  console.log("store Event*******>");
+  console.log(events);
   localStorage.setItem("events", JSON.stringify(events));
+  console.log("store Event*******<");
 }
 
-// Add submit event to form
-// todoForm.addEventListener("click", function(event) {
-//   event.preventDefault();
-
-//   var eventText = eventTextarea.value.trim();
-
-//   // Return from function early if submitted todoText is blank
-//   if (eventText === "") {
-//     return;
-//   }
-
-//   // Add new todoText to todos array, clear the input
-//   events.push(eventText);
-//   eventTextarea.value = "";
-
-//   // Store updated todos in localStorage, re-render the list
-//   storeEventss();
-//   renderEvents();
-// });
-
-// Add click event to todoList element
+// Add click event to schedule element
 eventList.addEventListener("click", function(event) {
   var element = event.target;
 
@@ -122,11 +98,15 @@ eventList.addEventListener("click", function(event) {
   if (element.matches("button") === true) {
     // Get its data-index value and remove the todo element from the list
     var index = element.parentElement.getAttribute("data-index");
-    // todos.splice(index, 1);
-    events[i].detail="";
+    var content = element.previousSibling.textContent;
+    console.log("index:"+index);
+    console.log("content:"+content+":");
+    events[index].detail=content;
 
     // Store updated todos in localStorage, re-render the list
+    console.log("store Event +++++>");
     storeEvents();
+    console.log("render Event +++++>");
     renderEvents();
   }
 });
