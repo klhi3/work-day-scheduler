@@ -3,7 +3,7 @@
   Work Day Scheduler application will run using Moment.js in the browser and feature dynamically updated HTML and CSS powered by jQuery.
   
 
-## Process
+## Features
 
 This is a daily planner to manage my time effectively
 
