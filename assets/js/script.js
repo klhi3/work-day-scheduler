@@ -3,7 +3,7 @@ var currentDay=moment();
 $("#currentDay").text(currentDay.format("dddd, MMMM Do YYYY"));
 
 // get current time value
-var timeValue=currentDay.format("hA");
+var timeValue=currentDay;  //hA
 console.log("["+timeValue+"]");
 
 //business hours
@@ -16,7 +16,7 @@ var schedules = [
     {  time:"2PM",  detail:""},  //5
     {  time:"3PM",  detail:""},  //6
     {  time:"4PM",  detail:""},  //7
-    {  time:"5AM",  detail:""}   //8
+    {  time:"5PM",  detail:""}   //8
 ];
 
 //variables
@@ -48,7 +48,15 @@ function renderEvents() {
         console.log(div1);
 
         var textArea1 = document.createElement("textarea");
-        textArea1.setAttribute('class', 'past col-md');
+
+        // compare actual time to schedule time
+        var aT = moment(event.time, 'hA').hour();
+        var bT = timeValue.hour();
+
+        if (aT>bT) textArea1.setAttribute('class', 'future col-md');
+        else if (aT<bT) textArea1.setAttribute('class', 'past col-md');
+        else  textArea1.setAttribute('class', 'present col-md');
+
         textArea1.textContent=event.detail;
         div.appendChild(textArea1);
         console.log(textArea1);
