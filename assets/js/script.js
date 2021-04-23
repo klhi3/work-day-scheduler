@@ -49,7 +49,7 @@ function renderEvents() {
 
         var textArea1 = document.createElement("textarea");
 
-        // compare actual time to schedule time
+        // compare actual time to schedule time=> change background color
         var aT = moment(event.time, 'hA').hour();
         var bT = timeValue.hour();
 
