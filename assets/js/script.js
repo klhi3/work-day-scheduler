@@ -98,7 +98,9 @@ eventList.addEventListener("click", function(event) {
   if (element.matches("button") === true) {
     // Get its data-index value and remove the todo element from the list
     var index = element.parentElement.getAttribute("data-index");
-    var content = element.previousSibling.textContent;
+    var content = element.previousSibling.value;
+    console.log(element.previousSibling.value);
+
     console.log("index:"+index);
     console.log("content:"+content+":");
     events[index].detail=content;
