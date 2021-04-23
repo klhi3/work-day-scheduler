@@ -20,7 +20,7 @@ To view this project, click [Work Day Scheduler](https://klhi3.github.io/work-da
   
   
  ## Portfolio
-![Work Day Scheduler](./Assets/page.gif)
+![Work Day Scheduler](./assets/images/page.gif)
   
   
 ## links
