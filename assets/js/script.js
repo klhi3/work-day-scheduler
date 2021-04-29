@@ -58,6 +58,7 @@ function renderEvents() {
 
         var btn1 = document.createElement("button");
         btn1.setAttribute('class', 'saveBtn col-1');
+        btn1.setAttribute('data-index', i);
         var iE = document.createElement("i");
         iE.setAttribute('class', 'fa fa-floppy-o');  
         btn1.appendChild(iE);
